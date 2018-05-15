@@ -1,0 +1,46 @@
+{
+  "name": "signal-vs-noise",
+  "version": "0.0.0",
+  "description": "Shared thoughts on design and tech.",
+  "main": "./src/server.js",
+  "repository": "git@github.com:urban/signal-vs-noise.git",
+  "author": "Urban Faubion <urban.faubion@gmail.com> (http://urbanfaubion.com/)",
+  "license": "MIT",
+  "engines": {
+    "node": ">= v8.5"
+  },
+  "scripts": {
+    "clear": "trash ./public node_modules/.cache",
+    "dev": "next dev src",
+    "build": "next build src",
+    "prestart": "yarn export",
+    "start": "next start src",
+    "export": "next build src && next export -o ./public src touch public/.nojekyll",
+    "deploy": "yarn clear && yarn export && gh-pages -d public -b gh-pages",
+    "format": "prettier --write src/**/*.js"
+  },
+  "dependencies": {
+    "@mapbox/rehype-prism": "0.2.0",
+    "@mdx-js/loader": "0.9.0",
+    "@mdx-js/mdx": "0.9.0",
+    "@zeit/next-css": "0.2.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-plugin-transform-inline-environment-variables": "0.4.3",
+    "babel-plugin-transform-pipeline-operator": "7.0.0-beta.3",
+    "next": "6.0.3",
+    "normalize.css": "8.0.0",
+    "prismjs": "1.14.0",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "remark-autolink-headings": "5.0.0",
+    "remark-images": "0.8.1",
+    "remark-slug": "5.0.0",
+    "remark-toc": "5.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "1.1.0",
+    "prettier": "1.12.1",
+    "trash-cli": "1.4.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    "transform-pipeline-operator",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    ["transform-inline-environment-variables", {
+        "include": [
+          "NODE_ENV"
+        ]
+      }]
+  ]
+}

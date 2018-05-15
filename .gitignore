@@ -1,3 +1,6 @@
+# mac
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -58,4 +61,8 @@ typings/
 .env
 
 # next.js build output
-.next
+src/.next
+public/
+
+# TODO list
+_TODO.md
