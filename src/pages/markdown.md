@@ -1,4 +1,4 @@
-import Other from './other.mdx'
+import Other from './other.md'
 
 # Hello, world `awesome`
 
@@ -6,7 +6,7 @@ import Other from './other.mdx'
 
 ```jsx
 <Other />
-```````
+```
 
 Here's a paragraph
 

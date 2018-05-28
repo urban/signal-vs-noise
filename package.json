@@ -17,7 +17,8 @@
     "start": "next start src",
     "export": "next build src && next export -o ./public src touch public/.nojekyll",
     "deploy": "yarn clear && yarn export && gh-pages -d public -b gh-pages",
-    "format": "prettier --write src/**/*.js"
+    "format": "prettier --write \"src/!(.next)**/*.{js,md,css}\"",
+    "test": "jest"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "0.2.0",
@@ -39,8 +40,13 @@
     "remark-toc": "5.0.0"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0-beta.49",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "23.0.1",
     "gh-pages": "1.1.0",
-    "prettier": "1.12.1",
+    "jest": "23.0.1",
+    "prettier": "1.13.0",
+    "regenerator-runtime": "0.11.1",
     "trash-cli": "1.4.0"
   }
 }

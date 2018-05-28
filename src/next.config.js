@@ -6,32 +6,32 @@ const path = require('path')
 const withCSS = require('@zeit/next-css')
 const prism = require('@mapbox/rehype-prism')
 
-const { name } = require('../package.json')
+const {name} = require('../package.json')
 
 const prod = process.env.NODE_ENV === 'production'
 
 module.exports = withCSS({
   // MDX support
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
-  webpack: (config, { defaultLoaders }) => {
-    config.resolve.alias =  {
+  webpack: (config, {defaultLoaders}) => {
+    config.resolve.alias = {
       ...config.resolve.alias,
-      "@components": path.resolve(__dirname, './components'),
-      "@styles": path.resolve(__dirname, './styles')
+      '@components': path.resolve(__dirname, './components'),
+      '@styles': path.resolve(__dirname, './styles'),
     }
 
     config.module.rules.push({
-      test: /\.mdx$/,
+      test: /\.md$/,
       use: [
         defaultLoaders.babel,
         {
           loader: '@mdx-js/loader',
           options: {
             mdPlugins: [images, toc, slug, headings],
-            hastPlugins: [prism]
-          }
-        }
-      ]
+            hastPlugins: [prism],
+          },
+        },
+      ],
     })
 
     return config
@@ -40,10 +40,10 @@ module.exports = withCSS({
   // Static HTML export
   exportPathMap: function(defaultPathMap) {
     return {
-      '/': { page: '/' }
+      '/': {page: '/'},
     }
   },
 
   // Link prefix for gh-pages
-  assetPrefix: prod ? `/${name}/` : ''
+  assetPrefix: prod ? `/${name}/` : '',
 })

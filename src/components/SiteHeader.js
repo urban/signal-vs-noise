@@ -41,6 +41,7 @@ export default () => (
       h1 {
         color: ${color.whiteSmoke};
         font-size: 1.5rem;
+        text-transform: uppercase;
       }
       h1 small {
         color: ${color.grey};
